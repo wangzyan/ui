@@ -1,0 +1,64 @@
+
+#coding:utf-8
+import time
+import os
+from appium import webdriver
+from selenium.webdriver.support.ui import WebDriverWait
+PATH=lambda p:os.path.abspath(os.path.join(os.path.dirname(__file__),p))
+desired_caps={}
+desired_caps['platformName']='Android'
+desired_caps['platformVersion']='7.1.2'
+desired_caps['deviceName']='1e86d86e'
+desired_caps['appPackage']='tv.yunxi.hostbox'
+desired_caps['appActivity']='tv.yunxi.hostbox.guide.LaunchActivity'
+desired_caps['app']=PATH('C:\\Python27\\AppiumPythonClient\\pp\\Yunxibox-1.8.9.apk')
+driver=webdriver.Remote('http://127.0.0.1:4723/wd/hub',desired_caps)
+desired_caps['unicodeKeyboard']=True
+desired_caps['resetKeyboard']=True
+WebDriverWait(driver,20).until(lambda the_driver: the_driver.find_element_by_id("tv.yunxi.hostbox:id/btn_login").is_displayed())
+driver.find_element_by_id("tv.yunxi.hostbox:id/et_username").send_keys("13157131289");
+driver.keyevent(66);
+driver.find_element_by_id("tv.yunxi.hostbox:id/et_password").send_keys("123456");
+driver.keyevent(66);
+#driver.find_element_by_id("tv.yunxi.hostbox:id/btn_login").click()
+time.sleep(2)
+#driver.tap([(1116,761),(1308,905)],100)
+#time.sleep(2)
+#driver.tap([(1116,761),(1308,905)],100)
+#time.sleep(2)
+driver.tap([(1656, 936),(1848, 1128)],100)
+driver.find_element_by_id("tv.yunxi.hostbox:id/et_title").send_keys("edasdfzd");
+driver.keyevent(66);
+driver.find_element_by_id("tv.yunxi.hostbox:id/year").send_keys("2019");
+driver.find_element_by_id("tv.yunxi.hostbox:id/month").send_keys("04");
+driver.find_element_by_id("tv.yunxi.hostbox:id/day").send_keys("21");
+driver.find_element_by_id("tv.yunxi.hostbox:id/hour").send_keys("20");
+driver.find_element_by_id("tv.yunxi.hostbox:id/minute").send_keys("03");
+#time.sleep(2)
+driver.tap([(1776,510),(1920,630)],100)
+driver.find_element_by_id("tv.yunxi.hostbox:id/btn_create").click()
+time.sleep(2)
+driver.tap([(30,237),(650,754)],100)
+time.sleep(2)
+driver.tap([(870,384),(960,474)],100)
+#driver.find_element_by_id("tv.yunxi.hostbox:id/rl_director_live_switch").click()
+driver.find_element_by_id("tv.yunxi.hostbox:id/iv_director_live_layers").click()
+driver.find_element_by_id("tv.yunxi.hostbox:id/rl_add_layers").click()
+driver.find_element_by_id("tv.yunxi.hostbox:id/tv_dialog_base_item2").click()
+driver.find_element_by_id("tv.yunxi.hostbox:id/btn_cycle_rolling").click()
+driver.find_element_by_id("tv.yunxi.hostbox:id/sb_testSize").click()
+#driver.tap([(1728,336),(1770,393)],100)
+driver.find_element_by_id("tv.yunxi.hostbox:id/et_captions").send_keys("yunxiyige");
+driver.keyevent(66);
+driver.find_element_by_id("tv.yunxi.hostbox:id/tv_captions_confirm").click()
+time.sleep(2)
+driver.tap([(1106,914),(1150,1093)],100)
+time.sleep(2)
+driver.tap([(1680,570),(1860,750)],100)
+time.sleep(2)
+#driver.find_element_by_id("tv.yunxi.hostbox:id/iv_living").click()
+driver.tap([(1260,673),(1500,817)],100)
+driver.find_element_by_id("tv.yunxi.hostbox:id/iv_live_back_jk").click()
+
+
+
